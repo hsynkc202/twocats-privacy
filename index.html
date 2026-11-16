@@ -6,13 +6,17 @@
 <title>Privacy Policy – Two Cats</title>
 <meta name="description" content="Privacy Policy for Two Cats, a puzzle game by Tetrano Labs: what the game stores on your device, what Google AdMob and Google Play process, and the choices you have.">
 <!--
-  Before publishing this page (details: README, "Privacy policy" and STORE_LISTING.md, section 8):
-  1. Host this file at a public URL (for example GitHub Pages) and enter that URL in Google Play Console
-     (App content > Privacy policy) and in your AdMob listing.
-  2. In AdMob, create and publish the GDPR message (Privacy and messaging) that the UMP form shows,
-     and create the 15 in-app products in Play Console, otherwise the consent form and purchases do not work.
-  3. Keep this text true: if the game starts using a new SDK or data, update it first
-     (test/privacy_policy_test.dart fails when a new dependency is added).
+  SINGLE SOURCE OF TRUTH. This one file is used in two places:
+    1. it is published on GitHub Pages (the public URL entered in Google Play Console and AdMob), and
+    2. it is bundled into the Game as an asset (pubspec.yaml: "- index.html") and shown inside the Game, offline,
+       from the main menu (Privacy Policy). Edit ONLY this file; there is no second copy.
+  When you change this text:
+    a. upload the new index.html to the GitHub Pages repository (the in-game copy does not update the website), and
+    b. ship a new version of the Game (the website does not update the in-game copy).
+  Keep this text true: if the game starts using a new SDK or data, update it first
+  (test/privacy_policy_test.dart fails when a new dependency is added; test/privacy_screen_test.dart checks the in-game view).
+  The in-game renderer (lib/ui/privacy_policy_screen.dart) understands only this markup: h1-h3, p, ul, ol, li, div (summary / table-wrap),
+  nav, table (thead, tbody, tr, th, td), strong, em, code, a, br. Using anything else makes test/privacy_screen_test.dart fail.
   This page loads nothing from other websites (no scripts, fonts, analytics or images), on purpose.
 -->
 <style>
@@ -48,7 +52,7 @@
 <main>
 
 <h1>Privacy Policy</h1>
-<p class="meta"><strong>Two Cats</strong> (“İki Kedi” in Turkish) · by Tetrano Labs · Last updated: November 14, 2026</p>
+<p class="meta"><strong>Two Cats</strong> · by Tetrano Labs · Last updated: November 15, 2026</p>
 
 <div class="summary">
   <p>The short version</p>
@@ -56,9 +60,11 @@
     <li>Two Cats is a single-player puzzle game. There is no account, no sign-up, no chat and no user-generated content.</li>
     <li>We do not run a server that receives your data. Your progress, coins and settings stay on your device (and in your Google backup, if Android Backup is turned on).</li>
     <li>The game shows ads served by <strong>Google AdMob</strong> and sells optional in-app purchases through <strong>Google Play Billing</strong>. These Google services process some data, as explained below.</li>
-    <li>Where the law requires it, the game asks for your consent with Google’s <strong>User Messaging Platform (UMP)</strong> before any ad is requested, and a “Privacy options” button in the main menu lets you change your choice.</li>
+    <li>Tetrano Labs does not sell your personal information and receives none from the Game. However, some privacy laws treat making data available to an advertising provider such as Google as “sharing” or “selling” for advertising. Sections 3, 4, 8 and 9 explain this and how to opt out.</li>
+    <li>Where the law requires it, the game asks for your consent with Google’s <strong>User Messaging Platform (UMP)</strong> before any ad is requested. Where Google requires it, a “Privacy options” button in the main menu lets you change your choice at any time.</li>
+    <li>You can read this policy at any time inside the game, without an internet connection: main menu › Privacy Policy.</li>
     <li>Permanent purchases can be restored on a new device. Remaining coins and boosters cannot be guaranteed there, because the game has no account or server.</li>
-    <li>We do not sell your personal information. The game is not directed at children.</li>
+    <li>The game is not directed at children.</li>
   </ul>
 </div>
 
@@ -67,7 +73,7 @@
   <li><a href="#who">Who we are</a></li>
   <li><a href="#local">Data stored only on your device</a></li>
   <li><a href="#admob">Advertising: Google AdMob</a></li>
-  <li><a href="#ump">Consent: Google UMP</a></li>
+  <li><a href="#ump">Consent and privacy options: Google UMP</a></li>
   <li><a href="#billing">Purchases: Google Play Billing</a></li>
   <li><a href="#none">What we do not use</a></li>
   <li><a href="#permissions">App permissions</a></li>
@@ -82,6 +88,7 @@
 
 <h2 id="who">1. Who we are</h2>
 <p>Two Cats (the “Game”) is a puzzle game published by <strong>Tetrano Labs</strong> (“Tetrano Labs”, “we”, “us”). On Android the Game’s package name is <code>com.tetranolabs.qoqo</code>. This policy explains what information the Game handles, who else processes information when you use it, and what choices you have. It is provided for your information. It is not a request for your agreement and it does not give anyone permission to process your data: where the law requires your consent (for example for personalized ads), the Game asks you separately, as described in section 4.</p>
+<p>This policy is also built into the Game. Open it from the main menu with <strong>Privacy Policy</strong>; it works offline. That button is separate from <strong>Privacy options</strong>, which is where you change your ad and consent choices (section 4).</p>
 
 <h2 id="local">2. Data stored only on your device</h2>
 <p>To work, the Game saves the following on your device, using the operating system’s standard app storage:</p>
@@ -107,14 +114,14 @@
   <li><strong>Interstitial ads</strong> between levels (at most once every 10 completed levels and not more often than every 4 minutes);</li>
   <li><strong>Rewarded ads</strong>, only when you choose to watch one to earn an extra hint, teleport or level skip.</li>
 </ul>
-<p>Players who buy “Remove ads” (or the bundle that includes it) no longer see interstitial ads. Rewarded ads stay available as an option. The Game asks for an ad only after the consent step in section 4 allows it; if ads are not allowed (or the Game is offline) no ad is requested and the Game stays fully playable.</p>
+<p>Players who buy “Remove ads” (or the bundle that includes it) no longer see interstitial ads. Rewarded ads stay available as an option. The Game asks for an ad only after the consent step in section 4 allows it; if ads are not allowed (or the Game is offline) no ad is requested and the Game stays fully playable. So that an ad is ready when you ask for one, the Game loads ads in advance. Ad requests, and the data described below, can therefore occur even if you do not end up watching an ad.</p>
 <p>When an ad is requested or shown, the AdMob SDK collects and sends information to Google. Depending on your device, region and consent choices, this can include:</p>
 <ul>
-  <li>your device’s Android advertising ID;</li>
+  <li>your device’s Android advertising ID and app set ID (and, according to Google, other identifiers related to accounts signed in on the device, where applicable);</li>
   <li>your IP address and the approximate location that can be derived from it (the Game does not access your precise location);</li>
-  <li>device and software information (model, operating system version, language, screen size, network type) and the Game’s identifier and version;</li>
-  <li>how you interact with ads (requests, impressions, clicks, whether a rewarded ad was completed);</li>
-  <li>diagnostic and performance data of the SDK, such as crash information.</li>
+  <li>device and software information (for example model, operating system version, language, screen size, network type) and the Game’s identifier and version;</li>
+  <li>how you interact with ads and the app as seen by the ad SDK (for example ad requests, impressions, clicks, taps, video views, whether a rewarded ad was completed);</li>
+  <li>diagnostic and performance information (for example app launch time, hang rate, energy usage and, possibly, crash-related information).</li>
 </ul>
 <p>Google uses this information to serve and measure ads, to prevent fraud and abuse, to keep the service secure and, <em>where permitted and consented</em>, to personalize ads. We do not receive this data in a form that identifies you. Google’s handling of the data is governed by Google’s own policies:</p>
 <ul>
@@ -123,13 +130,25 @@
   <li><a href="https://adssettings.google.com" rel="noopener">Google Ads Settings</a> (manage ad personalization)</li>
 </ul>
 
-<h2 id="ump">4. Consent: Google User Messaging Platform (UMP)</h2>
-<p>In regions where the law requires your consent for personalized advertising or for storing and accessing information on your device (for example the European Economic Area, the United Kingdom and Switzerland), the Game uses Google’s <strong>User Messaging Platform (UMP) SDK</strong>. UMP shows a consent form, records your choice on your device, and tells the ads SDK what it may do.</p>
+<h2 id="ump">4. Consent and privacy options: Google UMP</h2>
+<p>The Game uses Google’s <strong>User Messaging Platform (UMP) SDK</strong> to ask for your consent or give you privacy choices where the law requires it. UMP shows Google’s own message, records your choice on your device, and tells the ads SDK what it may do. The Game does not decide who sees which message: Google determines that from your region and from the messages Tetrano Labs has published in AdMob. Each time the Game starts it asks UMP for your current status.</p>
+<h3>Europe (European Economic Area, United Kingdom, Switzerland)</h3>
 <ul>
-  <li>Each time the Game starts it asks UMP whether your consent is needed. If it is, the consent form is shown <strong>before any ad is requested</strong>.</li>
-  <li>You can accept, decline, or manage your choices. Depending on your choice you may see personalized ads, non-personalized ads, or no ads. If ads are not allowed the Game does not request them, and you can still play; features that depend on watching an ad (extra hints, teleports or level skips from a rewarded ad) are then not available, but the free boosters and purchases still work.</li>
-  <li>If the consent status cannot be checked (for example you are offline), the Game relies on the status saved from your previous visit and requests no ad when in doubt.</li>
-  <li>In regions where the law requires you to be able to change your choice, the main menu shows a <strong>“Privacy options”</strong> button that opens the form again, so you can review or change your choice at any time. In other regions the button is not shown; you can still use the device settings listed in section 9.</li>
+  <li>If your consent is needed, Google’s consent form is shown when the Game starts, <strong>before any ad is requested</strong>.</li>
+  <li>You can consent, decline, or manage your options. You can change or withdraw your choice at any time with the “Privacy options” button in the main menu. Withdrawing is as easy as giving consent, and it does not affect processing that happened before you withdrew.</li>
+  <li>Depending on your choice you may see personalized ads, non-personalized ads, or no ads. If ads are not allowed, the Game does not request them and you can still play. Features that depend on watching an ad (extra hints, teleports or level skips from a rewarded ad) are then not available, but the free boosters and purchases still work.</li>
+  <li>If your consent status cannot be checked (for example you are offline), the Game relies on the status saved from your previous visit and requests no ad when in doubt.</li>
+</ul>
+<h3>United States (certain states)</h3>
+<ul>
+  <li>In some US states, Google provides a privacy message for state laws, including a “Do Not Sell or Share My Personal Information” choice. Google shows this message only when you open the “Privacy options” button in the main menu; it is not shown automatically when the Game starts.</li>
+  <li>The button appears only where Google reports that it is required. In the message you can opt out of the sale or sharing of your personal information. According to Google’s documentation, when such a signal is present the ads SDK restricts certain unique identifiers and limits how other data is processed for those ad requests.</li>
+  <li>An opt-out changes how your data is used for advertising. It does not necessarily stop ads from being shown; buying “Remove ads” stops interstitial ads.</li>
+</ul>
+<h3>For everyone</h3>
+<ul>
+  <li>Your choice is stored by Google’s UMP on your device. It is not part of the Game’s Android backup, so after a reinstall or on a new phone you may be asked again. We do not receive your choice.</li>
+  <li>Where the button is not shown, you can use the device settings and Google Ads Settings listed in section 9.</li>
 </ul>
 
 <h2 id="billing">5. Purchases: Google Play Billing</h2>
@@ -155,6 +174,7 @@
   <li>send push notifications;</li>
   <li>contain chat, social features or user-generated content.</li>
 </ul>
+<p>The links in this policy (for example to Google’s privacy policy) and the support e-mail address open in your device’s own browser or e-mail app, outside the Game. The Game does not track what you do there, and those sites and apps have their own policies.</p>
 
 <h2 id="permissions">7. App permissions</h2>
 <ul>
@@ -165,13 +185,15 @@
 </ul>
 
 <h2 id="sharing">8. Sharing and selling</h2>
-<p>We do not sell or rent your personal information, and we do not receive it from you in the first place, because the Game has no server and no accounts. Information is shared only with the Google services described above (AdMob, UMP, Google Play), which process it as independent providers under their own policies, and where we are required to do so by law.</p>
+<p>Tetrano Labs does not sell your personal information in exchange for money, and the Game does not send your personal information to us: there are no accounts, no servers and no analytics of our own, so we hold no personal information about you that we could sell.</p>
+<p>That is not the whole picture. To show ads, the Game includes Google’s AdMob SDK, which sends the information described in section 3 (such as the advertising ID, IP address and ad interactions) from your device to Google, and we earn revenue from ads shown in the Game. Some privacy laws, including those of certain US states and data-protection law in Europe and the UK, treat making personal information available to an advertising provider for targeted or cross-context behavioral advertising as “sharing” or “selling” (or as disclosure to a third party), even when no payment is made for the data itself. We cannot rule out that, under some of these laws, this counts as a “sale” or “sharing”. That is why we offer the opt-out and consent choices described in sections 4 and 9. Google processes this data under its own terms and policies, which we do not control.</p>
+<p>Apart from that, information is shared only with the Google services described above (AdMob, UMP, Google Play), and where we are required to do so by law.</p>
 <div class="table-wrap">
 <table>
   <thead><tr><th>Service</th><th>Provider</th><th>Purpose</th><th>Information involved</th></tr></thead>
   <tbody>
-    <tr><td>Google AdMob (Google Mobile Ads SDK)</td><td>Google</td><td>Showing and measuring ads; fraud prevention</td><td>Advertising ID, IP address, approximate location, device and app information, ad interactions, diagnostics</td></tr>
-    <tr><td>Google User Messaging Platform (UMP)</td><td>Google</td><td>Asking for and recording your consent choices</td><td>Your consent choice (stored on your device), region, device information needed to show the form</td></tr>
+    <tr><td>Google AdMob (Google Mobile Ads SDK)</td><td>Google</td><td>Showing and measuring ads; fraud prevention</td><td>Advertising ID, app set ID, IP address, approximate location, device and app information, ad interactions, diagnostics</td></tr>
+    <tr><td>Google User Messaging Platform (UMP)</td><td>Google</td><td>Asking for and recording your consent and privacy choices</td><td>Your choice (stored on your device), region, device information needed to show the form</td></tr>
     <tr><td>Google Play Billing</td><td>Google</td><td>Processing optional purchases and restoring them</td><td>Handled by Google Play: payment and purchase data. The Game receives only the purchase confirmation, on your device; we receive nothing</td></tr>
     <tr><td>Android Auto Backup (part of Android)</td><td>Google / your device maker</td><td>Optionally keeping a copy of the Game’s save file so it can be restored on a new phone</td><td>The Game’s save file only (progress, coins, costumes, boosters, purchase flags, purchase order identifiers). Controlled in your device’s backup settings</td></tr>
   </tbody>
@@ -179,13 +201,25 @@
 </div>
 
 <h2 id="choices">9. Your choices and rights</h2>
+<h3>Ad and privacy choices</h3>
 <ul>
-  <li><strong>Ad choices:</strong> change your answer to the consent form with the “Privacy options” button in the Game’s main menu (shown where the law requires it); use <a href="https://adssettings.google.com" rel="noopener">Google Ads Settings</a>; on Android go to <em>Settings › Privacy › Ads</em> to opt out of ad personalization or delete your advertising ID.</li>
+  <li><strong>Privacy options:</strong> change your answer to Google’s consent or privacy message with the “Privacy options” button in the Game’s main menu (shown where Google requires it). In the United States this is where you can opt out of the sale or sharing of your personal information (“Do Not Sell or Share My Personal Information”).</li>
+  <li><strong>Ad settings:</strong> use <a href="https://adssettings.google.com" rel="noopener">Google Ads Settings</a>; on Android go to <em>Settings › Privacy › Ads</em> to opt out of ad personalization or delete your advertising ID.</li>
   <li><strong>Fewer ads:</strong> buy “Remove ads” in the Game’s shop to stop interstitial ads. Rewarded ads are always optional.</li>
+</ul>
+<h3>Purchases and local data</h3>
+<ul>
   <li><strong>Restore purchases:</strong> use the “Restore purchases” button in the shop (see section 5 for what can and cannot be restored).</li>
   <li><strong>Delete your data:</strong> clear the Game’s storage in your device settings, or uninstall it, to erase what the Game saved on the device. Also delete or turn off your Google backup if you do not want a copy to be restored later (see section 2).</li>
-  <li><strong>Your legal rights:</strong> depending on where you live (for example under the GDPR, the UK GDPR, or the California Consumer Privacy Act) you may have the right to access, correct, delete, restrict or object to the processing of your personal information, to withdraw consent, and to lodge a complaint with a data-protection authority. Because we hold no personal information about you, requests mostly concern the data Google processes; you can exercise those rights with Google, and you can contact us if you need help. We do not sell personal information and we do not discriminate against anyone for exercising their rights.</li>
 </ul>
+<h3>Your rights</h3>
+<ul>
+  <li><strong>Europe, the United Kingdom and Switzerland:</strong> depending on the law that applies to you (for example the GDPR or the UK GDPR), you may have the right to access, correct, delete, restrict or object to the processing of your personal information, to data portability, to withdraw consent at any time, and to lodge a complaint with a data-protection authority.</li>
+  <li><strong>United States:</strong> residents of some states (for example California) may have the right to know what personal information is collected and how it is used and disclosed, to delete or correct it, to opt out of its sale or sharing and of targeted advertising, and not to be discriminated against for exercising these rights. Categories of information that Google’s ad SDK can process through the Game are listed in section 3: identifiers, internet and app activity (ad interactions), approximate location derived from the IP address, device information and diagnostics. The Game does not ask for sensitive personal information. We do not knowingly sell or share the personal information of children.</li>
+  <li><strong>How these rights work here:</strong> because we hold no personal information about you, requests mostly concern the data Google processes. You can exercise those rights with Google, and we will tell you which controls to use. We do not discriminate against anyone for exercising their rights.</li>
+</ul>
+<h3>Making a request</h3>
+<p>Write to <a href="mailto:support@tetranolabs.com">support@tetranolabs.com</a>. Because the Game has no accounts, we usually cannot identify you or look up data about you; we will respond within the time required by the law that applies and point you to the right Google controls.</p>
 
 <h2 id="retention">10. Retention and security</h2>
 <p>We keep no server-side data about you. Data on your device stays there until you delete it (and a copy may exist in your Google backup, see section 2). Data processed by Google is kept according to Google’s policies. Google may process data in the United States and other countries, using the safeguards described in its policies. We take reasonable steps to protect the Game, but no method of storage or transmission is completely secure.</p>
@@ -194,7 +228,7 @@
 <p>Two Cats is made for a general audience and is <strong>not directed at children under 13</strong> (or under the minimum age set by the law of your country). We do not knowingly collect personal information from children. If you believe a child has provided personal information in connection with the Game, please contact us and we will help to have it removed from our side.</p>
 
 <h2 id="changes">12. Changes to this policy</h2>
-<p>We may update this policy, for example when the Game adds or removes a service. The date at the top shows when it last changed. Material changes will be reflected in the Game’s store listing or in the Game itself. The updated policy describes how the Game works from the date shown; where the law requires your consent for a new use of your data, we will ask for it separately instead of assuming it.</p>
+<p>We may update this policy, for example when the Game adds or removes a service. The date at the top shows when it last changed. The copy inside the Game is updated when the Game itself is updated, so the copy on our website can be newer than the copy in your installed Game. Material changes will be reflected in the Game’s store listing or in the Game itself. The updated policy describes how the Game works from the date shown; where the law requires your consent for a new use of your data, we will ask for it separately instead of assuming it.</p>
 
 <h2 id="contact">13. Contact</h2>
 <p>Questions or requests about this policy or your privacy:</p>
