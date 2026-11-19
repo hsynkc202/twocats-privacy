@@ -52,7 +52,7 @@
 <main>
 
 <h1>Privacy Policy</h1>
-<p class="meta"><strong>Two Cats</strong> · by Tetrano Labs · Last updated: November 15, 2026</p>
+<p class="meta"><strong>Two Cats</strong> · by Tetrano Labs · Last updated: November 19, 2026</p>
 
 <div class="summary">
   <p>The short version</p>
@@ -63,6 +63,7 @@
     <li>Tetrano Labs does not sell your personal information and receives none from the Game. However, some privacy laws treat making data available to an advertising provider such as Google as “sharing” or “selling” for advertising. Sections 3, 4, 8 and 9 explain this and how to opt out.</li>
     <li>Where the law requires it, the game asks for your consent with Google’s <strong>User Messaging Platform (UMP)</strong> before any ad is requested. Where Google requires it, a “Privacy options” button in the main menu lets you change your choice at any time.</li>
     <li>You can read this policy at any time inside the game, without an internet connection: main menu › Privacy Policy.</li>
+    <li>If you allow notifications, the game can remind you to play when you have not opened it for a while. These reminders are created on your device: no server, no account and no personal data are involved, and you can turn them off at any time in your device’s notification settings (section 2).</li>
     <li>Permanent purchases can be restored on a new device. Remaining coins and boosters cannot be guaranteed there, because the game has no account or server.</li>
     <li>The game is not directed at children.</li>
   </ul>
@@ -98,7 +99,8 @@
   <li>flags for purchases you made (for example “ads removed”, costumes, booster packs, the Mega bundle, or a supporter badge);</li>
   <li>a setting such as sound on or off;</li>
   <li>counters used to space out ads (levels completed since the last ad, and the time of the last ad);</li>
-  <li>short identifiers of purchases that were already credited (the order number, or a short fingerprint of the purchase token), so that the same purchase is never credited twice.</li>
+  <li>short identifiers of purchases that were already credited (the order number, or a short fingerprint of the purchase token), so that the same purchase is never credited twice;</li>
+  <li>a note that the Game has already asked you once whether it may show reminder notifications (see “Reminder notifications” below).</li>
 </ul>
 <p>This information is <strong>not sent to us</strong> by the Game. The Game chooses its display language from your device’s language setting; it does not send that setting anywhere.</p>
 <p><strong>When this data is deleted, and when it can come back.</strong></p>
@@ -106,6 +108,16 @@
   <li>Clearing the Game’s storage in your device settings deletes it from the device.</li>
   <li>Uninstalling the Game removes it from the device too. <strong>However</strong>, the Game allows Android’s Auto Backup for its save file (and for nothing else). If backup is turned on for your Google account, Google may keep a copy of that save file in your Google backup and restore it when you reinstall the Game or set up a new phone, so your progress, coins and boosters can reappear. That copy is stored by Google, not by us, and we cannot see or delete it. You can delete it, or turn backup off, in your device’s Google backup settings.</li>
   <li>Without a backup, a reinstall starts a new save. Permanent purchases can then be restored, but coins and booster balances cannot (see section 5).</li>
+</ul>
+
+<h3>Reminder notifications</h3>
+<p>When you leave the Game, it asks your device to show a few reminder notifications if you do not come back: after about 24 hours, 48 hours and 72 hours, and then after about 7, 14 and 30 days (at most six in total, each with a short text chosen at random from a fixed list, in the language of the Game and under the name “Two Cats”). Please note:</p>
+<ul>
+  <li>They are scheduled and shown by your device’s own notification system. <strong>No server, push-messaging service or account is involved</strong>, and no personal information is used or sent anywhere. The texts are part of the Game.</li>
+  <li>They are cancelled as soon as you open the Game again, so you only see them while you have not played.</li>
+  <li>On Android 13 and later the Game asks you once, after you have completed a few levels, for permission to show notifications. If you decline (or turn notifications off later), no reminder is shown. On earlier Android versions you can turn them off in the device settings.</li>
+  <li>You can turn the notifications off at any time in your device settings: Settings › Apps › Two Cats › Notifications.</li>
+  <li>Your device keeps the scheduled reminders and restores them after a restart. They are not part of the Game’s Android backup.</li>
 </ul>
 
 <h2 id="admob">3. Advertising: Google AdMob</h2>
@@ -171,7 +183,7 @@
   <li>create accounts or ask for your name, e-mail address, phone number or date of birth;</li>
   <li>use analytics, crash-reporting, attribution or social-media SDKs of its own;</li>
   <li>use your camera, microphone, contacts, photos, files, calendar or precise location;</li>
-  <li>send push notifications;</li>
+  <li>send push notifications from a server or any messaging service (the only notifications are the reminders your device schedules by itself, described in section 2);</li>
   <li>contain chat, social features or user-generated content.</li>
 </ul>
 <p>The links in this policy (for example to Google’s privacy policy) and the support e-mail address open in your device’s own browser or e-mail app, outside the Game. The Game does not track what you do there, and those sites and apps have their own policies.</p>
@@ -181,6 +193,7 @@
   <li><strong>Internet access and network state</strong> (<code>INTERNET</code>, <code>ACCESS_NETWORK_STATE</code>): needed to load ads and to talk to Google Play for purchases. The game can be played offline, without ads and without purchases.</li>
   <li><strong>Advertising ID and Android ad services</strong> (<code>com.google.android.gms.permission.AD_ID</code>, <code>ACCESS_ADSERVICES_AD_ID</code>, <code>ACCESS_ADSERVICES_ATTRIBUTION</code>, <code>ACCESS_ADSERVICES_TOPICS</code>): used by the Google Mobile Ads SDK as described in section 3. You can delete or reset the advertising ID in your device’s settings; see section 9.</li>
   <li><strong>Google Play Billing</strong> (<code>com.android.vending.BILLING</code>): lets the Game offer in-app purchases.</li>
+  <li><strong>Notifications and restart</strong> (<code>POST_NOTIFICATIONS</code>, <code>RECEIVE_BOOT_COMPLETED</code>, <code>VIBRATE</code>): to show the reminder notifications described in section 2 and to keep them scheduled after your device restarts. No data is collected through them.</li>
   <li>The libraries bundled with the Game declare a few more technical permissions (for example keeping the device awake while a sound plays). The Game does not use them to collect personal information.</li>
 </ul>
 
@@ -195,7 +208,7 @@
     <tr><td>Google AdMob (Google Mobile Ads SDK)</td><td>Google</td><td>Showing and measuring ads; fraud prevention</td><td>Advertising ID, app set ID, IP address, approximate location, device and app information, ad interactions, diagnostics</td></tr>
     <tr><td>Google User Messaging Platform (UMP)</td><td>Google</td><td>Asking for and recording your consent and privacy choices</td><td>Your choice (stored on your device), region, device information needed to show the form</td></tr>
     <tr><td>Google Play Billing</td><td>Google</td><td>Processing optional purchases and restoring them</td><td>Handled by Google Play: payment and purchase data. The Game receives only the purchase confirmation, on your device; we receive nothing</td></tr>
-    <tr><td>Android Auto Backup (part of Android)</td><td>Google / your device maker</td><td>Optionally keeping a copy of the Game’s save file so it can be restored on a new phone</td><td>The Game’s save file only (progress, coins, costumes, boosters, purchase flags, purchase order identifiers). Controlled in your device’s backup settings</td></tr>
+    <tr><td>Android Auto Backup (part of Android)</td><td>Google / your device maker</td><td>Optionally keeping a copy of the Game’s save file so it can be restored on a new phone</td><td>The Game’s save file only (progress, coins, costumes, boosters, purchase flags, purchase order identifiers, the note that the notification question was shown). Controlled in your device’s backup settings</td></tr>
   </tbody>
 </table>
 </div>
@@ -205,6 +218,7 @@
 <ul>
   <li><strong>Privacy options:</strong> change your answer to Google’s consent or privacy message with the “Privacy options” button in the Game’s main menu (shown where Google requires it). In the United States this is where you can opt out of the sale or sharing of your personal information (“Do Not Sell or Share My Personal Information”).</li>
   <li><strong>Ad settings:</strong> use <a href="https://adssettings.google.com" rel="noopener">Google Ads Settings</a>; on Android go to <em>Settings › Privacy › Ads</em> to opt out of ad personalization or delete your advertising ID.</li>
+  <li><strong>Notifications:</strong> turn the reminder notifications off in your device settings (Settings › Apps › Two Cats › Notifications), or decline the permission when Android 13 and later asks.</li>
   <li><strong>Fewer ads:</strong> buy “Remove ads” in the Game’s shop to stop interstitial ads. Rewarded ads are always optional.</li>
 </ul>
 <h3>Purchases and local data</h3>
